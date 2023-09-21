@@ -59,8 +59,11 @@ CREATE TABLE `mesa` (
 INSERT INTO `mesa` (`id`, `archivo`, `expte`, `adjunto`, `extracto`, `letra`, `paginas`, `autor`, `estado`, `tipo`, `creado`, `editado`) VALUES
 (11,	NULL,	'2222',	NULL,	'este es el dos',	NULL,	NULL,	'González, Alejandra Victoria - Romero, Javier Alejandro',	NULL,	NULL,	'2023-09-20',	NULL),
 (12,	NULL,	'33333',	NULL,	'dfgsdfgsdfsdfgd',	NULL,	NULL,	'Romero, Javier Alejandro - Ruiz, Juan Pablo',	NULL,	NULL,	'2023-09-20',	NULL),
-(13,	NULL,	'4444',	NULL,	'ddfgsdgsdfg',	NULL,	NULL,	'González, Alejandra Victoria - Romero, Javier Alejandro',	NULL,	NULL,	'2023-09-20',	NULL),
-(14,	NULL,	'5555',	NULL,	'aaaaaaa',	NULL,	NULL,	'Romero, Javier Alejandro - Ruiz, Juan Pablo',	NULL,	NULL,	'2023-09-20',	NULL);
+(13,	NULL,	'4444',	NULL,	'ddfgsdgsdfg',	NULL,	NULL,	'González, Alejandra Victoria - Romero, Javier Alejandro',	NULL,	'Declaración',	'2023-09-20',	NULL),
+(14,	NULL,	'66666',	'adjunto el 777',	'hola mundo',	'G',	20,	'Ruiz, Juan Pablo - Romero, Javier Alejandro',	'con estado',	'Declaración',	'2023-09-20',	'2023-09-20'),
+(15,	NULL,	'777777',	'adjun',	'dfdfgsdfgsdfgdsfg',	'R',	5,	'Romero, Javier Alejandro',	'estado',	'Declaración',	NULL,	'2023-09-20'),
+(16,	NULL,	'88888',	'dadadada',	'fdfgh dfghdgfh dfghdfghdfghfdgh',	't',	45,	'Ruiz, Juan Pablo - Romero, Javier Alejandro',	'ssss',	'Ordenanza',	NULL,	'2023-09-20'),
+(17,	NULL,	'88888',	'adadad',	'fdfgh dfghdgfh dfghdfghdfghfdgh',	't',	45,	'Ruiz, Juan Pablo - Romero, Javier Alejandro',	'eeee',	'Ordenanza',	'2023-09-20',	'2023-09-20');
 
 DROP TABLE IF EXISTS `presidencia`;
 CREATE TABLE `presidencia` (
@@ -117,7 +120,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `correo`, `clave`, `nombre`, `tipo`, `creado`, `editado`) VALUES
 (1,	'pabloruiz1980@gmail.com',	'soledad',	'Ruiz, Juan Pablo',	'Administrador',	'2023-09-20 15:00:21',	'2023-09-20 17:17:29'),
-(2,	'mesa@hcd.ar',	'mesa',	'Romero, Javier Alejandro',	NULL,	'2023-09-20 15:00:59',	NULL),
-(3,	'secre@hcd.ar',	'secretaria',	'González, Alejandra Victoria',	NULL,	'2023-09-20 15:01:55',	NULL);
+(2,	'mesa@hcd.ar',	'mesa',	'Romero, Javier Alejandro',	'Concejal',	'2023-09-20 15:00:59',	'2023-09-20 20:56:27'),
+(3,	'secre@hcd.ar',	'secretaria',	'González, Alejandra Victoria',	'Concejal',	'2023-09-20 15:01:55',	'2023-09-20 20:56:22');
 
--- 2023-09-20 23:19:59
+-- 2023-09-21 01:22:35
