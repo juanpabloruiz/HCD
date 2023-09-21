@@ -1,4 +1,5 @@
 <?php include('../cabecera.php'); ?>
+<?php include('../menu.php'); ?>
 <body>
 <a href="nuevo">Agregar nuevo expediente</a>
 <hr>
@@ -27,5 +28,4 @@
     }
     ?>
 </table>
-</body>
-</html>
+<?php include('../pie.php'); ?>

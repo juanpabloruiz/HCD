@@ -1,4 +1,4 @@
-<?php include('../conexion.php'); ?>
+<?php include('../cabecera.php'); ?>
 <form method="post" action="insertar" enctype="multipart/form-data">
 
     <label for="archivo">Ingresar archivo</label><br>
@@ -45,3 +45,4 @@
 
     <input type="submit" value="Crear">
 </form>
+<?php include('../pie.php'); ?>
