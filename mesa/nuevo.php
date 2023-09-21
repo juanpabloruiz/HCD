@@ -7,6 +7,9 @@
     <label for="expte">Expediente:</label><br>
     <input type="text" name="expte" id="expte" placeholder="Expediente"><br>
 
+    <label for="adjunto">Adjunto:</label><br>
+    <input type="text" name="adjunto" id="adjunto" placeholder="Adjunto"><br>
+
     <label for="extracto">Extracto:</label><br>
     <textarea name="extracto" id="extracto" cols="30" rows="10" placeholder="Extracto..."></textarea><br>
    
@@ -23,6 +26,9 @@
         echo '<input type="checkbox" name="autor[]" id="autores" value="'.$campo['nombre'].'"> '.$campo['nombre'].'<br>';
     }
     ?>
+
+    <label for="estado">Estado:</label><br>
+    <input type="text" name="estado" id="estado" placeholder="Estado"><br>
     
     <label for="tipo">Tipo:</label><br>
     <select name="tipo" id="tipo">
