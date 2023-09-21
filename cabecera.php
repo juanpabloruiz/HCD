@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php titulo(); ?></title>
     <?php
-$servidor =  dirname($_SERVER['SCRIPT_FILENAME']);
+$servidor =  dirname($_SERVER['PHP_SELF']);
+echo $servidor.'<br>';
 $archivo_css = '/css/bootstrap.min.css';
+echo $servidor.$archivo_css;
 ?>
-
-<link rel="stylesheet" href="/srv/http/HCD/css/bootstrap.min.css">
+<?php echo $_SERVER['ORIG_PATH_INFO']; ?>
+<link rel="stylesheet" href="<?php echo 'http://localhost/'.$servidor.$archivo_css; ?>">
 
     
 </head>
