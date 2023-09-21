@@ -1,5 +1,8 @@
 <?php include('../conexion.php'); ?>
-<form method="post" action="insertar">
+<form method="post" action="insertar" enctype="multipart/form-data">
+
+    <label for="archivo">Ingresar archivo</label><br>
+    <input type="file" name="archivo"><br>
 
     <label for="expte">Expediente:</label><br>
     <input type="text" name="expte" id="expte" placeholder="Expediente"><br>
@@ -17,9 +20,7 @@
     <?php
     $consulta = mysqli_query($conexion, "SELECT * FROM usuarios ORDER BY nombre");
     while ($campo = mysqli_fetch_assoc($consulta)) {
-    ?>
-        <input type="checkbox" name="autor[]" id="autores" value="<?php echo $campo['nombre']; ?>"> <?php echo $campo['nombre']; ?><br>
-    <?php
+        echo '<input type="checkbox" name="autor[]" id="autores" value="'.$campo['nombre'].'"> '.$campo['nombre'].'<br>';
     }
     ?>
     
@@ -34,5 +35,6 @@
 
     <label for="fecha">Fecha:</label><br>
     <input type="date" name="creado" id="creado"><br>
+
     <input type="submit" value="Crear">
 </form>
