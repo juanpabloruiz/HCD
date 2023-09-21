@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include('../conexion.php');
 $id = $_GET['id'];
 $consulta = mysqli_query($conexion, "SELECT * FROM mesa WHERE id = '$id'");
@@ -25,7 +28,7 @@ $campo = mysqli_fetch_assoc($consulta);
         }
     }
     ?>
-    
+
     <input type="text" name="estado" value="<?php echo $campo['estado']; ?>"><br>
     
     <!-- Tipo seleccionado-->
