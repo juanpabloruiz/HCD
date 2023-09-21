@@ -1,4 +1,5 @@
-<?php include('../conexion.php'); ?>
+<?php include('../cabecera.php'); ?>
+<body>
 <a href="nuevo">Agregar nuevo expediente</a>
 <hr>
 <table border="1" cellpadding="7">
@@ -26,3 +27,5 @@
     }
     ?>
 </table>
+</body>
+</html>
