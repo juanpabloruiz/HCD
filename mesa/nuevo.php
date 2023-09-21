@@ -27,6 +27,7 @@
     <label for="tipo">Tipo:</label><br>
     <select name="tipo" id="tipo">
         <option disabled selected>Elegir tipo</option>
+        <option value="Comunicación">Comunicación</option>
         <option value="Ordenanza">Ordenanza</option>
         <option value="Resolución">Resolución</option>
         <option value="Declaración">Declaración</option>

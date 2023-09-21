@@ -34,7 +34,7 @@ $campo = mysqli_fetch_assoc($consulta);
     <!-- Tipo seleccionado-->
     <select name="tipo">
         <?php
-        $opciones = array("Ordenanza", "Resolución", "Declaración");
+        $opciones = array("Comunicación", "Ordenanza", "Resolución", "Declaración");
         $tipo = $campo['tipo'];
         foreach ($opciones as $opcion) {
             echo '<option value="' . $opcion . '"';
