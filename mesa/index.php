@@ -1,11 +1,13 @@
 <?php include('../conexion.php'); ?>
 <a href="nuevo">Agregar nuevo expediente</a>
+<hr>
 <table border="1" cellpadding="7">
     <tr>
         <th>Expte</th>
         <th>Autor</th>
-        <th>Texto</th>
+        <th>Extracto</th>
         <th>Creado</th>
+        <th>Editado</th>
         <th>Funciones</th>
     </tr>
     <?php
@@ -15,8 +17,9 @@
         <tr>
             <td><?php echo $campo['expte']; ?></td>
             <td><?php echo $campo['autor']; ?></td>
-            <td><?php echo $campo['texto']; ?></td>
+            <td><?php echo $campo['extracto']; ?></td>
             <td><?php echo $campo['creado']; ?></td>
+            <td><?php echo $campo['editado']; ?></td>
             <td><a href="editar?id=<?php echo $campo['id']; ?>">Editar</a> | <a href="eliminar?id=<?php echo $campo['id']; ?>" onclick="return confirm('¿Desea eliminar el expediente <?php echo $campo['expte']; ?>?')">Eliminar</a></td>
         </tr>
     <?php
