@@ -16,5 +16,11 @@ $estado = $_POST['estado'];
 $tipo = $_POST['tipo'];
 $creado = $_POST['creado'];
 mysqli_query($conexion, "INSERT INTO mesa (archivo, expte, adjunto, extracto, letra, paginas, autor, estado, tipo, creado) VALUES ('$archivo', '$expte', '$adjunto', '$extracto', '$letra', '$paginas', '$autores', '$estado', '$tipo', '$creado')");
+mysqli_query($conexion, "INSERT INTO secretaria () VALUES ()");
+mysqli_query($conexion, "INSERT INTO presidencia () VALUES ()");
+mysqli_query($conexion, "INSERT INTO secretaria () VALUES ()");
+mysqli_query($conexion, "INSERT INTO labor () VALUES ()");
+mysqli_query($conexion, "INSERT INTO prosecretaria () VALUES ()");
+mysqli_query($conexion, "INSERT INTO comisiones () VALUES ()");
 header('Location:./');
 ?>
