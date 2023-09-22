@@ -1,5 +1,4 @@
 <?php include('cabecera.php'); ?>
-<?php include('menu.php'); ?>
 
     <main class="container my-3">
 

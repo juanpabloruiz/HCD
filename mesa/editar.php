@@ -1,5 +1,4 @@
 <?php include('../cabecera.php'); ?>
-<?php include('../menu.php'); ?>
 
 <?php
 // Selección del registro a editar

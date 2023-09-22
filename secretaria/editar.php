@@ -1,15 +1,16 @@
 <?php include('../cabecera.php'); ?>
-<?php include('../menu.php'); ?>
 
 <?php
 // Selección del registro a editar
 $id = $_GET['id'];
-$consulta = mysqli_query($conexion, "SELECT * FROM mesa WHERE id = '$id'");
+$consulta = mysqli_query($conexion, "SELECT mesa.expte, secretaria.* FROM mesa INNER JOIN secretaria ON mesa.id = secretaria.id WHERE mesa.id = '$id'");
 $campo = mysqli_fetch_assoc($consulta);
 ?>
 
     <!-- Contenedor -->
     <main class="container my-3">
+
+        <?php echo '<h4>Expediente: ' . $campo['expte'] . '</h4>'; ?>
 
         <!-- Formulario -->
         <form method="post" action="actualizar" enctype="multipart/form-data">
