@@ -11,7 +11,7 @@ $lugar_fecha = $_POST['lugar_fecha'];
 mysqli_query($conexion, "UPDATE secretaria SET
 informe = '$informe',
 firma = '$firma',
-lugar_fecha = '$lugar_fecha',
+lugar_fecha = '$lugar_fecha' 
 WHERE id = '$id'");
 header('Location:./');
 ?>

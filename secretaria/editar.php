@@ -74,7 +74,7 @@ $campo = mysqli_fetch_assoc($consulta);
 
                     <div class="mb-3">
                         <h4>Ingresar archivo de Firma Digital</h4>
-                        <input type="file" name="archivo" class="form-control">
+                        <input type="file" name="firma" class="form-control">
                     </div>
 
                     <div class="form-floating mb-3">

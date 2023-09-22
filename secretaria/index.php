@@ -17,7 +17,7 @@
                     <td><?php echo $campo['expte']; ?></td>
                     <td><?php echo $campo['informe']; ?></td>
                     <td><?php echo $campo['firma']; ?></td>
-                    <td><?php echo $campo['Lugar y fecha']; ?></td>
+                    <td><?php echo $campo['lugar_fecha']; ?></td>
                     <td><a href="editar?id=<?php echo $campo['id']; ?>">Editar</a></td>
                 </tr>
             <?php
