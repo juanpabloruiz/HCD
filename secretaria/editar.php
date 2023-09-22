@@ -10,7 +10,7 @@ $campo = mysqli_fetch_assoc($consulta);
     <!-- Contenedor -->
     <main class="container my-3">
 
-        <?php echo '<h4>Expediente: ' . $campo['expte'] . '</h4>'; ?>
+        <?php echo '<h3>Expediente: ' . $campo['expte'] . '</h3>'; ?>
 
         <!-- Formulario -->
         <form method="post" action="actualizar" enctype="multipart/form-data">
@@ -23,77 +23,63 @@ $campo = mysqli_fetch_assoc($consulta);
 
                     <input type="hidden" name="id" value="<?php echo $campo['id']; ?>">
            
+                	<!-- Informe -->
+                    <h4>Seleccionar Informe</h4>
+                    <div class="card text-bg-secondary mb-3">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input type='radio' name='informe' class='form-check-input' value='Por la presente se remite el Expediente de referencia, para su conocimiento.
+                                    <div style="text-indent: 100px;">Sugiriendo salvo mejor criterio el pase a la Dirección de Labor Parlamentaria del HCD en el caso de que considere que corresponda su incorporación al orden del día para ser tratado en Sesión Ordinaria del HCD.</div>
+                                    <div style="text-indent: 100px;">Atentamente</div>'
+                                    <?php if (strpos($campo['informe'], "Ordinaria") !== false) echo "checked"; ?>>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Por la presente se remite el Expediente de referencia, para su conocimiento.
+                                    <div style="text-indent: 100px;">Sugiriendo salvo mejor criterio el pase a la Dirección de Labor Parlamentaria del HCD en el caso de que considere que corresponda su incorporación al orden del día para ser tratado en Sesión Ordinaria del HCD.</div>
+                                    <div style="text-indent: 100px;">Atentamente</div>
+                                </label>
+                            </div>
+                        </div>
+				    </div>
+                    <div class="card text-bg-secondary mb-3">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input type='radio' name='informe' class='form-check-input' value='Por la presente se remite el Expediente de referencia, para su conocimiento.
+                                    <div style="text-indent: 100px;">Sugiriendo salvo mejor criterio el pase a la Dirección de Labor Parlamentaria del HCD en el caso de que considere que corresponda su incorporación al orden del día para ser tratado en Sesión Extraordinaria del HCD.</div>
+                                    <div style="text-indent: 100px;">Atentamente</div>'
+                                    <?php if (strpos($campo['informe'], "Extraordinaria") !== false) echo "checked"; ?>>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Por la presente se remite el Expediente de referencia, para su conocimiento.
+                                    <div style="text-indent: 100px;">Sugiriendo salvo mejor criterio el pase a la Dirección de Labor Parlamentaria del HCD en el caso de que considere que corresponda su incorporación al orden del día para ser tratado en Sesión Extraordinaria del HCD.</div>
+                                    <div style="text-indent: 100px;">Atentamente</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card text-bg-secondary mb-3">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input type='radio' name='informe' class='form-check-input' value='Por la presente se remite el Expediente de referencia, para su conocimiento.
+                                    <div style="text-indent: 100px;">Sugiriendo salvo mejor criterio el pase a la Dirección de Labor Parlamentaria del HCD en el caso de que considere que corresponda su incorporación al orden del día para ser tratado en Sesión Especial del HCD.</div>
+                                    <div style="text-indent: 100px;">Atentamente</div>'
+                                    <?php if (strpos($campo['informe'], "Especial") !== false) echo "checked"; ?>>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Por la presente se remite el Expediente de referencia, para su conocimiento.
+                                    <div style="text-indent: 100px;">Sugiriendo salvo mejor criterio el pase a la Dirección de Labor Parlamentaria del HCD en el caso de que considere que corresponda su incorporación al orden del día para ser tratado en Sesión Especial del HCD.</div>
+                                    <div style="text-indent: 100px;">Atentamente</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+				    <!-- /Informe -->
+
                     <div class="mb-3">
+                        <h4>Ingresar archivo de Firma Digital</h4>
                         <input type="file" name="archivo" class="form-control">
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="text" name="expte" class="form-control" id="expte" value="<?php echo $campo['expte']; ?>">
-                        <label for="expte">Expedientes</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" name="adjunto" class="form-control" id="adjunto" value="<?php echo $campo['adjunto']; ?>">
-                        <label for="adjunto">Adjunto</label>
-                    </div>
-
-                    <div class="mb-3">
-                        <textarea name="extracto" class="form-control" cols="30" rows="10"><?php echo $campo['extracto']; ?></textarea>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" name="letra" class="form-control" value="<?php echo $campo['letra']; ?>">
-                        <label for="letra">Letra</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="number" name="paginas" class="form-control" id="paginas" value="<?php echo $campo['paginas']; ?>">
-                        <label for="paginas">Páginas</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" name="estado" class="form-control" value="<?php echo $campo['estado']; ?>">
-                        <label for="estado">Estado</label>
-                    </div>
-
-                    <!-- Tipo seleccionado-->
-                    <div class="mb-3">
-                        <h4>Seleccionar documento</h4>
-                        <select name="tipo" class="form-select">
-                            <?php
-                            $opciones = array("Comunicación", "Ordenanza", "Resolución", "Declaración");
-                            $tipo = $campo['tipo'];
-                            foreach ($opciones as $opcion) {
-                                echo '<option value="' . $opcion . '"';
-                                if ($opcion == $tipo) {
-                                    echo ' selected';
-                                }
-                                echo '>' . $opcion . '</option>';
-                            }
-                            ?>
-                        </select>
-                    </div>
-
-                </div>
-                <!-- /Columna izquierda -->
-                
-                <!-- Columna derecha -->
-                <div class="col-md">
-
-                    <!-- Autores seleccionados-->
-                    <div class="mb-3">
-                        <h4>Seleccionar autores</h4>
-                        <?php
-                        $usuarios = mysqli_query($conexion, "SELECT * FROM usuarios WHERE categoria = 'autor' ORDER BY nombre ASC");
-                        $seleccionados = explode(" - ", $campo['autor']);
-                        while ($fila = mysqli_fetch_assoc($usuarios)) {
-                            if (in_array($fila['nombre'], $seleccionados)) {
-                                echo '<div class="form-check"><input type="checkbox" name="autor[]" class="form-check-input" id="autor" value="'.$fila['nombre'].'" checked><label class="form-check-label" for="autor">'.$fila['nombre'].'</label></div>';
-                            } else {
-                                echo '<div class="form-check"><label class="form-check-label"><input type="checkbox" name="autor[]" class="form-check-input" id="autor" value="'.$fila['nombre'].'"><label class="form-check-label" for="autor">'.$fila['nombre'].'</label></div>';
-                            }
-                        }
-                        ?>
+                        <input type="text" name="lugar_fecha" class="form-control" id="lugar_fecha" value="<?php echo $campo['lugar_fecha']; ?>">
+                        <label for="lugar_fecha">Lugar y Fecha</label>
                     </div>
 
                     <div class="mb-3">
@@ -101,7 +87,7 @@ $campo = mysqli_fetch_assoc($consulta);
                     </div>
                 
                 </div>
-                <!-- /Columna derecha -->
+                <!-- /Columna izquierda -->
 
             </div>
             <!-- /Fila -->
