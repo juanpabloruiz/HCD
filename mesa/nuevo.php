@@ -3,39 +3,54 @@
     <main class="container my-5">
 
         <form method="post" action="insertar" enctype="multipart/form-data">
+
+        <div class="row">
+
+        <div class="col-md">
             
             <div class="mb-3">
-                <label for="archivo">Ingresar archivo</label>
+                <h4>Ingresar archivo</h4>
                 <input type="file" name="archivo" class="form-control">
             </div>
             
-            <div class="mb-3">
-                <label for="expte">Expediente:</label>
+            <div class="form-floating mb-3">
+                
                 <input type="text" name="expte" class="form-control" id="expte" placeholder="Expediente">
+                <label for="expte">Expediente</label>
             </div>
 
-            <div class="mb-3">
-                <label for="adjunto">Adjunto:</label>
+            <div class="form-floating mb-3">
+                
                 <input type="text" name="adjunto" class="form-control" id="adjunto" placeholder="Adjunto">
+                <label for="adjunto">Adjunto</label>
             </div>
 
             <div class="mb-3">
-                <label for="extracto">Extracto:</label>
-                <textarea name="extracto" class="form-control" id="extracto" cols="30" rows="10" placeholder="Extracto..."></textarea>
+                
+                <textarea name="extracto" class="form-control" id="extracto" rows="10" placeholder="Extracto..."></textarea>
+                
             </div>
 
-            <div class="mb-3">
-                <label for="letra">Letra:</label>
+
+            
+
+            <div class="form-floating mb-3">
+                
                 <input type="text" name="letra" class="form-control" id="letra" placeholder="Letra">
+                <label for="letra">Letra</label>
             </div>
 
-            <div class="mb-3">
-                <label for="paginas">Páginas:</label>
+            <div class="form-floating mb-3">
+                
                 <input type="number" name="paginas" class="form-control" id="paginas" placeholder="Páginas">
+                <label for="paginas">Páginas</label>
             </div>
 
+            </div>
+            <div class="col-md">
+
             <div class="mb-3">
-                <label for="autores">Autores:</label>
+                <h4>Seleccionar autores</h4>
                 <?php
                 $consulta = mysqli_query($conexion, "SELECT * FROM usuarios ORDER BY nombre");
                 while ($campo = mysqli_fetch_assoc($consulta)) {
@@ -44,13 +59,14 @@
                 ?>
             </div>
 
-            <div class="mb-3">
-                <label for="estado">Estado:</label>
+            <div class="form-floating mb-3">
+                
                 <input type="text" name="estado" class="form-control" id="estado" placeholder="Estado">
+                <label for="estado">Estado</label>
             </div>
 
             <div class="mb-3">
-                <label for="tipo">Tipo:</label><br>
+                <h4>Seleccionar documento</h4>
                 <select name="tipo" class="form-select" id="tipo">
                     <option disabled selected>Elegir tipo</option>
                     <option value="Comunicación">Comunicación</option>
@@ -61,13 +77,18 @@
             </div>
 
             <div class="mb-3">
-                <label for="fecha">Fecha:</label><br>
+                <h4>Fecha de creación</h4>
                 <input type="date" name="creado" class="form-control" id="creado">
             </div>
 
             <div class="mb-3">
-                <input type="submit" value="Crear" class="btn btn-primary">
+                <input type="submit" value="Crear Expediente" class="btn btn-primary">
             </div>
+
+            </div>
+
+            </div>
+
         </form>
 
     </main>
