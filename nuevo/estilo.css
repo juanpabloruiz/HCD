@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    font: 16px Helvetica, Arial, Serif;
+}
+
+input {
+    display: block;
+    margin-bottom: 1em;
+}

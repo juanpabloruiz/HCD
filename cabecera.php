@@ -7,8 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php titulo(); ?></title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+    html {height: 100%;}
+    body {display: flex;flex-direction: column;min-height: 100%;}
+    footer {margin-top: auto;}
+    </style>
 </head>
 
 <body>
@@ -26,25 +30,26 @@
                         <a class="nav-link active" aria-current="page" href="../">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/mesa">Mesa de Entradas</a>
+                        <a class="nav-link" href="mesa">Mesa de Entradas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/secretaria">Secretaría</a>
+                        <a class="nav-link" href="../secretaria">Secretaría</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/presidencia">Presidencia</a>
+                        <a class="nav-link" href="presidencia">Presidencia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/labor">Labor Parlamentaria</a>
+                        <a class="nav-link" href="labor">Labor Parlamentaria</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/prosecretaria">Prosecretaría</a>
+                        <a class="nav-link" href="prosecretaria">Prosecretaría</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/comisiones">Secretaría de Comisiones</a>
+                        <a class="nav-link" href="comisiones">Secretaría de Comisiones</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- /Menú -->
+    <a href="nuevo">Nuevo</a>
