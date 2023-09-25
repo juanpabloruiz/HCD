@@ -13,6 +13,7 @@ mysqli_set_charset($conexion, 'utf8');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesa de Entradas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
     html {height: 100%;}
     body {display: flex;flex-direction: column;min-height: 100%;}
@@ -78,6 +79,7 @@ mysqli_set_charset($conexion, 'utf8');
                     echo '</select></div>';
                     echo '<div class="mb-3"><input type="submit" name="actualizar" value="Actualizar" class="btn btn-primary"></div>';
                 } else {
+                    echo '<div class="alert alert-info"><i class="bi bi-arrow-down-circle-fill mx-3"></i>Agregar nuevo expediente</div>';
                     echo '<form method="post" enctype="multipart/form-data">';
                     echo '<div class="mb-3"><input type="text" name="expte"  class="form-control"placeholder="Expediente"></div>';
                     echo '<div class="mb-3"><input type="file" name="archivo" class="form-control"></div>';
@@ -122,7 +124,7 @@ mysqli_set_charset($conexion, 'utf8');
                             <td><?php echo $campo['expte']; ?></td>
                             <td><?php echo $campo['extracto']; ?></td>
                             <td><?php echo $campo['creado']; ?></td>
-                            <td><a href="?editar=<?php echo $campo['id']; ?>">Editar</a> <a href="?eliminar=<?php echo $campo['id']; ?>" onclick="return confirm('¿Desea eliminar el expte <?php echo $campo['expte']; ?>?')">Eliminar</a></td>
+                            <td><a href="?editar=<?php echo $campo['id']; ?>" class="btn btn-primary" title="Editar"><i class="bi bi-pencil-square"></i></a> <a href="?eliminar=<?php echo $campo['id']; ?>" onclick="return confirm('¿Desea eliminar el expte <?php echo $campo['expte']; ?>?')" class="btn btn-danger" title="eliminar"><i class="bi bi-trash3"></i></a></td>
                         </tr>
                     <?php
                     }
